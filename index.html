@@ -1,175 +1,278 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Ddocument type and specified the language -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Meta information for character encoding and responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Touchstone Electrical Services</title>
-    <!-- Hotjar Tracking Code for https://brettnwilson.github.io/UED100_Assess_2/ -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:5207497,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-    <!-- Bootstrap CSS CDN -->
+    <title>Touchstone Electrical Services</title> <!-- Page title -->
+    
+    <!-- Bootstrap CSS for styling and responsiveness link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    
+    <!-- Internal CSS for additional custom styles -->
+    <style> 
+        
         body {
-            background-color: #000000; /* Black background */
-            color: #ffffff; /* White text for contrast */
+            background-color: #000; /* black background */
+            color: #fff; /* white text */
         }
 
-        .btn-yellow {
-            background-color: #FFCC00; /* Yellow background */
-            color: #000000; /* Black text */
+    
+        .btn-yellow { /* yellow button on contact us form */
+            background-color: #FFCC00;
+            color: #000000;
             border: none;
-        }
+            width: auto; /* makes button size adjust to content */
+            margin-top: 20px;
+            text-align: center; /* centres button on page */
+            display: block;
+            margin: 0 auto; /* center the button horizontally */
+            }
+        
 
         .section-bg {
-            background-color: #1a1a1a; /* Dark gray for sections */
-            border-radius: 8px; /* Slight rounding on section backgrounds */
-            padding: 20px;
-            margin-bottom: 20px;
+            background-color: #1a1a1a; /* background color of the section to dark gray. */
+            border-radius: 8px; 
+            padding: 20px; /* adds inner spacing to ensure content doesn't touch the edges of the section. */
+            margin-bottom: 20px; /* space between this section and the next element below it. */
         }
 
         footer {
-            background-color: #333;
-            color: #ffffff;
-            padding: 10px;
-            text-align: center;
+            background-color: #333; /* sets a dark gray background to visually differentiate the footer from the main content. */
+            color: #fff; /* white text. */
+            padding: 10px; /* adds space inside the footer. */
+            text-align: center; /* centers the text within the footer. */
+        }
+        
+
+        /* Header Section */
+        header {
+            display: flex; /* applied a flexbox layout to the header. */
+            align-items: center; /* vertically centers the content within header. */
+            justify-content: space-between; /* distributes space between elements. */
+            padding: 20px; /* adds spacing around the content inside the header. */
+            background-color: #fff; /* background color of the header to white. */
+        }
+
+        header img {
+            max-width: 150px; /* sets a maximum image width to 150px */
+            margin-bottom: 10px; /* add a 10px space below the image */
+        }
+
+        header .text-center {
+            flex-grow: 1; /* allows the element inside the header to grow. */
+            text-align: center; /* aligns the text inside the element to the center */
+        }
+
+        /* Navbar */
+        header nav {
+            display: none; /* hide the navbar by default */
+            flex-direction: column; /* navbar items in a vertical column */
+            align-items: flex-start;
+            position: fixed;
+            top: 0;
+            right: -100%; /* position the navbar to the right */
+            height: 100%;
+            width: 250px;
+            background-color: #fff; /* background colour of the navbar */
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: right 0.3s ease; /* smooth transition for sliding the navbar */
+            z-index: 10;
+        }
+
+        header nav.show {
+            display: flex;
+            right: 0;
+        }
+
+        header nav a {
+            padding: 15px;
+            color: #333;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        header nav a:hover {
+            background-color: #007bff; /* change background color to blue when hovered */
+            color: #fff; /* change text color to white when hovered */
+        }
+
+        /* Hamburger Menu */
+        .navbar-toggler {
+            border: none;
+            background: none;
+        }
+
+        /* styling the navbar toggler */
+        .navbar-toggler-icon { 
+            background-color: black;
+            width: 30px;
+            height: 3px;
+            display: block;
+            margin: 6px auto;
+            position: relative;
+            border-radius: 2px;
+            box-shadow: 0 5px 0 black, 0 -5px 0 black;
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 769px) {
+            header nav {
+                display: flex;
+                position: static;
+                flex-direction: row;
+                box-shadow: none;
+            }
+        }
+
+        /* styling for columns inside the #services section */
+        #services .col-md-6 {
+            display: flex;
+            align-items: start;
+            margin-bottom: 30px;
+            padding: 15px; /* adds padding around the images and content */
+        }
+
+        /* styling for images inside columns in the #services section */
+        #services .col-md-6 img {
+            max-width: 250px; /* limits the maximum size of images to 250px */
+            margin-right: 20px;
+        }
+
+        /* styling for div elements inside columns in the #services section */
+        #services .col-md-6 div {
+            margin-left: 20px;
         }
     </style>
 </head>
 <body>
 
     <!-- Header Section -->
-<header class="bg-white text-dark py-4 d-flex align-items-center">
-    <img src="./images/Color logo with background transparent.png" alt="Touchstone Electricians Logo" class="img-fluid" style="max-width: 250px; margin-right: 20px; padding: 30px;">
-    <div class="text-center flex-grow-1">
-        <div class="heading-container">
-            <h1 style="font-size: 4rem; width: 100%;">Touchstone Electrical Services</h1>
-            <h2 style="font-size: 1.5rem; width: 100%;">Your Trusted Partner for Electrical Services</h2>
+    <header class="bg-white text-dark py-4 d-flex align-items-center justify-content-between flex-wrap">
+        <!-- Logo location, alternate text, "img-fluid" allows the image to be responsive to size of the container, keeps the logo to a size of 150px and adds 10x padding at the bottom-->
+        <img src="/Users/brettwilson/Documents/Personal/Uni/UED100/Python/TouchStone/Logo/Color logo with background transparent.png" 
+             alt="Touch Stone Electricians Logo" 
+             class="img-fluid" 
+             style="max-width: 150px; margin-bottom: 10px;">
+        
+        <!-- Header Text -->
+        <div class="text-center flex-grow-1 px-3">
+            <!-- Main Title and sub heading, the font size was increase two and half times the normal default and the sub heading was increased one a half times the normal default size-->
+            <h1 class="header-title" style="font-size: 2.5rem; margin-bottom: 5px;">Touchstone Electrical Services</h1>
+            <h2 class="header-subtitle" style="font-size: 1.2rem;">Your Trusted Partner for Electrical Services</h2>
         </div>
-    </div>
-    <nav>
-        <a href="#services" class="text-dark mx-2" style="padding-right: 5px;">Services</a>
-        <a href="#about" class="text-dark mx-2" style="padding-right: 5px;">About Us</a>
-        <a href="#testimonials" class="text-dark mx-2" style="padding-right: 5px;">Testimonials</a>
-        <a href="mailto:admin@touchstoneelectricians.com.au?subject=Inquiry from Touchstone Electricians Website&body=Hello, I would like to know more about your services." class="text-dark mx-2" style="padding-right: 40px;">Contact</a>
-    </nav>
-</header>
+        
+        <!-- Hamburger Menu -->
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-
-
-    <!-- Services Section -->
-<section id="services" class="section-bg container my-5">
-    <h2 class="text-center mb-4">Our Services</h2>
-    <div class="row">
-        <div class="col-md-6 d-flex align-items-start mb-4">
-            <img src="./images/istockphoto-1075182646-1024x1024.jpg" alt="Service 1" class="img-fluid me-3" style="max-width: 250px;">
-            <div>
-                <h5>Residential Electrical Repairs</h5>
-                <p>We offer quick and efficient repairs for all your home electrical needs.</p>
-            </div>
-        </div>
-        <div class="col-md-6 d-flex align-items-start mb-4">
-            <img src="./images/istockphoto-1354891373-1024x1024.jpg" alt="Service 2" class="img-fluid me-3" style="max-width: 250px;">
-            <div>
-                <h5>Commercial Electrical Installations</h5>
-                <p>Expert installations tailored for your business's specific needs.</p>
-            </div>
-        </div>
-        <div class="col-md-6 d-flex align-items-start mb-4">
-            <img src="./images/istockphoto-117144601-1024x1024.jpg" alt="Service 3" class="img-fluid me-3" style="max-width: 250px;">
-            <div>
-                <h5>Emergency Services Available 24/7</h5>
-                <p>We're here for you around the clock for any electrical emergencies.</p>
-            </div>
-        </div>
-        <div class="col-md-6 d-flex align-items-start mb-4">
-            <img src="./images/gettyimages-1344758237-2048x2048.jpg" alt="Service 4" class="img-fluid me-3" style="max-width: 250px;">
-            <div>
-                <h5>Electrical Upgrades and Safety Inspections</h5>
-                <p>Ensure your electrical systems are safe and up to date with our inspection services.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- About Us Section -->
-    <style>
-        #about p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 1.5em;
-        }
-    </style>
+        <nav id="navbarNav" class="collapse navbar-collapse">
+        </nav>
     
-    <section id="about" class="section-bg container my-5">
-        <h2 class="text-center mb-4">About Us</h2>
-        <p class="text-center">At Touchstone Electricial, we’re committed to delivering high-quality electrical services with precision, professionalism, and care. 
-            
-        <p>Based in Terry Hills, New South Wales, we serve both residential and commercial clients, providing reliable electrical solutions that ensure safety and efficiency for every project.</p>    
-    
-        <p>Our team of licensed and experienced electricians is dedicated to exceeding your expectations. From small repairs and installations to complex electrical system designs, we bring a high level of skill and attention to detail to every job.</p>
-    
-        <p>Whether you need electrical maintenance, new wiring, or energy-efficient lighting solutions, we approach each task with the same dedication and expertise that has earned us the trust of our clients.</p>
+        <!-- Navbar -->
+        <nav id="navbarNav" class="collapse navbar-collapse text-center w-100 w-md-auto">
+            <a href="#services" class="text-dark mx-2">Services</a> <!-- services section link-->
+            <a href="#about" class="text-dark mx-2">About Us</a> <!-- about us section link-->
+            <a href="#testimonials" class="text-dark mx-2">Testimonials</a> <!-- testimonials section link-->
+            <a href="mailto:admin@touchstoneelectricians.com.au" class="text-dark mx-2">Contact</a> <!-- contact us section link-->
+        </nav>
+    </header>
+
+    <!-- Services Section, all images are set to fluid, to allow responsive scaling and set to a maximum image size of 250px-->
+    <section id="services" class="section-bg container my-3 my-md-5 p-3 p-md-5">
+        <h2 class="text-center mb-4">Our Services</h2>
+        <div class="row">
+            <div class="col-12 col-md-6 d-flex align-items-start mb-4">
+                <img src="/Users/brettwilson/Documents/Personal/Uni/UED100/Python/TouchStone/Pictures/istockphoto-1075182646-1024x1024.jpg" alt="Service 1" class="img-fluid" style="max-width: 250px;">
+                <div>
+                    <h5>Residential Electrical Repairs</h5>
+                    <p>We offer quick and efficient repairs for all your home electrical needs.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-start mb-4">
+                <img src="/Users/brettwilson/Documents/Personal/Uni/UED100/Python/TouchStone/Pictures/istockphoto-1354891373-1024x1024.jpg" alt="Service 2" class="img-fluid" style="max-width: 250px;">
+                <div>
+                    <h5>Commercial Electrical Installations</h5>
+                    <p>Expert installations tailored for your business's specific needs.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-start mb-4">
+                <img src="/Users/brettwilson/Documents/Personal/Uni/UED100/Python/TouchStone/Pictures/istockphoto-117144601-1024x1024.jpg" alt="Service 3" class="img-fluid" style="max-width: 250px;">
+                <div>
+                    <h5>Emergency Services Available 24/7</h5>
+                    <p>We're here for you around the clock for any electrical emergencies.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-start mb-4">
+                <img src="/Users/brettwilson/Documents/Personal/Uni/UED100/Python/TouchStone/Pictures/gettyimages-1344758237-2048x2048.jpg" alt="Service 4" class="img-fluid" style="max-width: 250px;">
+                <div>
+                    <h5>Electrical Upgrades and Safety Inspections</h5>
+                    <p>Ensure your electrical systems are safe and up to date with our inspection services.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- About Us Section -->
+    <section id="about" class="section-bg container my-5">
+        <h2 class="text-center mb-4">About Us</h2>
+        <p class="text-center">At Touchstone Electrical, we’re committed to delivering high-quality electrical services with precision, professionalism, and care.</p>
+        <p>Based in Terry Hills, New South Wales, we serve both residential and commercial clients, providing reliable electrical solutions that ensure safety and efficiency for every project.</p>    
+        <p>Our team of licensed and experienced electricians is dedicated to exceeding your expectations. From small repairs and installations to complex electrical system designs, we’re here to serve your needs with unmatched expertise.</p>
+    </section>
 
+     <!-- Testimonials Section -->
+     <section id="testimonials" class="section-bg container my-5">
+        <h2 class="text-center mb-4">What Our Clients Say</h2>
+        <p class="text-center">Our clients trust us with their electrical needs, and here’s what they have to say:</p>
+        <blockquote class="blockquote text-center">
+            <p>"Touchstone Electrical provided outstanding service, and their team was professional, prompt, and efficient. I highly recommend them for all electrical needs!"</p>
+            <footer class="blockquote-footer">Sarah L., Residential Client</footer>
+        </blockquote>
+        <blockquote class="blockquote text-center">
+            <p>"We’ve worked with Touchstone Electrical for several commercial projects, and we’re always impressed with their attention to detail and customer service."</p>
+            <footer class="blockquote-footer">John R., Commercial Client</footer>
+        </blockquote>
+    </section>
 
-    <!-- Testimonials Section -->
-<section id="testimonials" class="section-bg container my-5">
-    <h2 class="text-center mb-4">What Our Customers Say</h2>
-    <blockquote class="blockquote fst-italic">Touchstone did an amazing job. Fast, efficient, and friendly!” – Jane D.</blockquote>
-    <blockquote class="blockquote fst-italic">“Highly recommended for any electrical needs.” – John S.</blockquote>
-</section>
+    <!-- contact us  section -->
+    <section id="contact" class="container my-5">
+        <h2 class="text-center">Contact Us</h2>
+        <form action="mailto:admin@touchstone.com" method="POST" class="section-bg">
+            <!-- name field -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <!-- email field -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <!-- message field -->
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+            </div>
+            <!-- submit button -->
+            <button type="submit" class="btn btn-yellow btn-sm w-auto">Submit</button>
+        </form>
+    </section>
 
-<section id="contact" class="section-bg container my-5">
-    <h2 class="text-center mb-4">Contact Us</h2>
-    <form action="process_form.php" method="POST" class="needs-validation" novalidate>
-        <div class="mb-3">
-            <label for="name" class="form-label">Name:</label>
-            <input type="text" id="name" name="name" class="form-control" required>
-            <div class="invalid-feedback">Please enter your name.</div>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-            <div class="invalid-feedback">Please enter a valid email address.</div>
-        </div>
-        <div class="mb-3">
-            <label for="phone" class="form-label">Phone:</label>
-            <input type="tel" id="phone" name="phone" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="subject" class="form-label">Subject:</label>
-            <input type="text" id="subject" name="subject" class="form-control" required>
-            <div class="invalid-feedback">Please enter a subject.</div>
-        </div>
-        <div class="mb-3">
-            <label for="message" class="form-label">Message:</label>
-            <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
-            <div class="invalid-feedback">Please enter a message.</div>
-        </div>
-        <div class="text-center">
-            <button type="submit" class="btn btn-yellow">Send Message</button>
-        </div>
-    </form>
-</section>    
-
+    <!-- footer -->
     <footer>
-        <p>&copy; 2024 Touchstone Electricians. All Rights Reserved.</p>
+        <!-- footer text -->
+        <p>&copy; 2024 Touchstone Electrical Services. All Rights Reserved.</p>
     </footer>
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
-
+    <!-- bootstrap javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- navbar toggle script -->
+    <script>
+        document.querySelector(".navbar-toggler").addEventListener("click", () => {
+            document.querySelector("header nav").classList.toggle("show");
+        });
+    </script>
 </body>
 </html>
