@@ -154,6 +154,26 @@
         .social-icons a:hover {
             color: #007bff; /* Blue color on hover */
         }
+        .btn-danger {
+            background-color: #dc3545; /* Red color */
+            color: #fff;
+            border: none;
+            padding: 15px 25px; /* Adjust padding for a round shape */
+            border-radius: 50%; /* Makes the button circular */
+            font-size: 16px;
+            text-align: center;
+            width: 100px; /* Set a fixed width to maintain circular shape */
+            height: 100px; /* Set a fixed height to match the width */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 40px; /* Add space on the left of the button */
+            margin-top: 10px; /* Add space on top */
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
     </style>
 </head>
 <body>
@@ -188,6 +208,11 @@
             <a href="#testimonials" class="text-dark mx-2">Testimonials</a> <!-- testimonials section link-->
             <a href="mailto:admin@touchstoneelectricians.com.au" class="text-dark mx-2">Contact</a> <!-- contact us section link-->
         </nav>
+
+        <!-- Emergency Contact Button -->
+        <button class="btn btn-danger btn-sm" onclick="window.location.href='tel:+61404078326'">
+            Emergency Call Now
+        </button>
     </header>
 
     <!-- Services Section, all images are set to fluid, to allow responsive scaling and set to a maximum image size of 250px-->
