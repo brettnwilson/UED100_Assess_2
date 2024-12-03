@@ -10,14 +10,62 @@
 
     <!-- Add this in the head tag for Font Awesome icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unna:wght@400;700&display=swap" rel="stylesheet">
+
     
     <!-- Internal CSS for additional custom styles -->
     <style> 
         
-        body {
-            background-color: #000; /* black background */
-            color: #fff; /* white text */
+        /* Apply Unna font only to the h1 in the header */
+        header .header-title {
+            font-family: 'Unna', serif; /* Use Unna font */
+            font-weight: 700; /* Bold weight for emphasis */
+            font-size: 2.5rem; /* Adjust size */
+            color: #333; /* Dark color */
+            text-align: center; /* Center the heading */
+            margin-bottom: 10px; /* Space below the heading */
         }
+
+        /* Default styling for other headings */
+        h1, h2, h3 {
+            font-family: 'Roboto', sans-serif; /* Use Roboto for all other headings */
+            font-weight: 400; /* Regular weight */
+            color: #fff; /* Light text color */
+            margin: 0 0 15px; /* Margin for spacing */
+        }
+
+        /* Optional: Styling for header subtitle (h2) */
+        header .header-subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2rem;
+            color: #555; /* Lighter color for contrast */
+        }
+
+        /* General Font Styles */
+        body {
+            font-family: 'Roboto', sans-serif; /* Modern font for body text */
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Links and Navbar */
+        a {
+            font-family: 'Roboto', sans-serif; /* Clean and legible font */
+            text-decoration: none;
+            color: #007bff; /* Blue color for links */
+        }
+
+        a:hover {
+            color: #0056b3; /* Slightly darker blue on hover */
+        }
+
+        /* Buttons */
+        button, .btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+}
 
     
         .btn-yellow { /* yellow button on contact us form */
@@ -145,53 +193,34 @@
         #services .col-md-6 div {
             margin-left: 20px;
         }
-        .social-icons a {
-            font-size: 24px;
-            color: #fff;
-            transition: color 0.3s;
-        }
 
-        .social-icons a:hover {
-            color: #007bff; /* Blue color on hover */
-        }
-        .btn-danger {
-            background-color: #dc3545; /* Red color */
-            color: #fff;
-            border: none;
-            padding: 15px 25px; /* Adjust padding for a round shape */
-            border-radius: 50%; /* Makes the button circular */
-            font-size: 16px;
-            text-align: center;
-            width: 100px; /* Set a fixed width to maintain circular shape */
-            height: 100px; /* Set a fixed height to match the width */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-left: 40px; /* Add space on the left of the button */
-            margin-top: 10px; /* Add space on top */
-        }
-
-        .btn-danger:hover {
-            background-color: #c82333; /* Darker red on hover */
-        }
+        
     </style>
 </head>
 <body>
 
     <!-- Header Section -->
-    <header class="bg-white text-dark py-4 d-flex align-items-center justify-content-between flex-wrap">
-        <!-- Logo location, alternate text, "img-fluid" allows the image to be responsive to size of the container, keeps the logo to a size of 150px and adds 10x padding at the bottom-->
+        <header class="bg-white text-dark py-4 d-flex align-items-center justify-content-between flex-wrap">
+            <!-- Logo location -->
         <img src="./images/Color logo with background transparent.png" 
              alt="Touch Stone Electricians Logo" 
-             class="img-fluid" 
-             style="max-width: 150px; margin-bottom: 10px;">
-        
-        <!-- Header Text -->
-        <div class="text-center flex-grow-1 px-3">
-            <!-- Main Title and sub heading, the font size was increase two and half times the normal default and the sub heading was increased one a half times the normal default size-->
-            <h1 class="header-title" style="font-size: 2.5rem; margin-bottom: 5px;">Touchstone Electrical Services</h1>
-            <h2 class="header-subtitle" style="font-size: 1.2rem;">Your Trusted Partner for Electrical Services</h2>
-        </div>
+                class="img-fluid" 
+                style="max-width: 150px; margin-bottom: 10px;">
+            
+            <!-- Header Text -->
+            <div class="text-center flex-grow-1 px-3">
+                <!-- Main Title -->
+                <h1 class="header-title">Touchstone Electrical Services</h1>
+                <!-- Subtitle -->
+                <h2 class="header-subtitle">Your Trusted Partner for Electrical Services</h2>
+                <!-- Contact Info -->
+                <div class="contact-info mt-3">
+                    <a href="tel:+61404078326" class="text-dark d-flex align-items-center justify-content-center">
+                        <i class="fas fa-phone-alt mirrored-icon me-2"></i>
+                        <span style="font-family: 'Roboto', sans-serif; font-size: 1.2rem;">0404 078 326</span>
+                    </a>
+                </div>
+            </div>
         
         <!-- Hamburger Menu -->
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -206,13 +235,8 @@
             <a href="#services" class="text-dark mx-2">Services</a> <!-- services section link-->
             <a href="#about" class="text-dark mx-2">About Us</a> <!-- about us section link-->
             <a href="#testimonials" class="text-dark mx-2">Testimonials</a> <!-- testimonials section link-->
-            <a href="mailto:admin@touchstoneelectricians.com.au" class="text-dark mx-2">Contact</a> <!-- contact us section link-->
+            <a href="mailto:admin@touchstoneelectrical.com.au" class="text-dark mx-2">Contact</a> <!-- contact us section link-->
         </nav>
-
-        <!-- Emergency Contact Button -->
-        <button class="btn btn-danger btn-sm" onclick="window.location.href='tel:+61404078326'">
-            Emergency Call Now
-        </button>
     </header>
 
     <!-- Services Section, all images are set to fluid, to allow responsive scaling and set to a maximum image size of 250px-->
