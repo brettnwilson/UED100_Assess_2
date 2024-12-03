@@ -327,27 +327,23 @@
         </div>
     </section>
 
-    <!-- contact us  section -->
-    <section id="contact" class="container my-5">
-        <h2 class="text-center my-4">Book a Service</h2>
+    <!-- callback  section -->
+    <section id="callback" class="container my-5">
+        <h2 class="text-center mb-4">Request a Callback</h2>
         <form action="mailto:admin@touchstoneelectrical.com.au" method="POST" class="section-bg">
             <div class="mb-3">
-                <label for="serviceType" class="form-label">Service Type</label>
-                <select id="serviceType" name="service" class="form-control" required>
-                    <option value="Residential">Residential Electrical</option>
-                    <option value="Commercial">Commercial Electrical</option>
-                    <option value="Emergency">Emergency Services</option>
-                </select>
+                <label for="callbackName" class="form-label">Name</label>
+                <input type="text" id="callbackName" name="name" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label for="preferredDate" class="form-label">Preferred Date</label>
-                <input type="date" id="preferredDate" name="date" class="form-control" required>
+                <label for="callbackPhone" class="form-label">Phone Number</label>
+                <input type="tel" id="callbackPhone" name="phone" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label for="preferredTime" class="form-label">Preferred Time</label>
-                <input type="time" id="preferredTime" name="time" class="form-control">
+                <label for="callbackTime" class="form-label">Preferred Callback Time</label>
+                <input type="time" id="callbackTime" name="time" class="form-control">
             </div>
-            <button type="submit" class="btn btn-yellow btn-sm">Book Now</button>
+            <button type="submit" class="btn btn-yellow btn-sm">Request Callback</button>
         </form>
     </section>
 
